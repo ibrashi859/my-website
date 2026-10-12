@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Han Oyeee </title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      background: linear-gradient(135deg, #10002b, #3c096c, #001d3d);
+    }
+
+    .page {
+      display: none;
+      width: 100%;
+      max-width: 600px;
+      padding: 35px 22px;
+      border: 2px solid #c77dff;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 30px rgba(199, 125, 255, 0.35);
+      animation: appear 0.4s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    h1 {
+      color: #e0aaff;
+      font-size: clamp(28px, 6vw, 44px);
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 1.6;
+    }
+
+    button {
+      border: none;
+      border-radius: 35px;
+      padding: 15px 25px;
+      margin-top: 20px;
+      color: white;
+      background: linear-gradient(90deg, #7b2ff7, #c77dff);
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 18px #9d4edd66;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 25px #c77dff;
+    }
+
+    .photo {
+      width: 100%;
+      max-width: 350px;
+      max-height: 350px;
+      object-fit: contain;
+      border: 3px solid #e0aaff;
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+
+    .small {
+      color: #d8c8ef;
+      font-size: 14px;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PAGE 1 -->
+  <section class="page active" id="page1">
+    <h1>Kyu Bachyy SUNA!</h1>
+    <p>Ab neeche button par click kar!</p>
+    <button onclick="nextPage(2)">
+      PHIR CLICK KAR 
+    </button>
+  </section>
+
+  <!-- PAGE 2 -->
+  <section class="page" id="page2">
+    <h1>BAT SUN! 👀 </h1>
+    <p>Idr Nichy Dekh </p>
+    <button onclick="nextPage(3)">
+      HAN SUNA 
+    </button>
+  </section>
+
+  <!-- PAGE 3 -->
+  <section class="page" id="page3">
+    <h1>JAYE GA?</h1>
+    <p>Soch le !</p>
+    <button onclick="nextPage(4)">
+      KIDER? 👀
+    </button>
+  </section>
+
+  <!-- PAGE 4: PICTURE -->
+  <section class="page" id="page4">
+    <h1>IDAR 🤣 </h1>
+
+ 
+<img
+  class="photo"
+  src="./meri-pic.jpg.jpg"
+  alt="Meri picture"
+>
+
+
+    <p>LORU</p>
+    <button onclick="nextPage(5)">
+      AUR DEKH 🤣
+    </button>
+  </section>
+
+  <!-- PAGE 5 -->
+  <section class="page" id="page5">
+    <h1> OYE RUK!</h1>
+    <p>Abhi to asl baat baqi hai  </p>
+    <button onclick="nextPage(6)">
+      DABA ISKO 
+    </button>
+  </section>
+
+  <!-- PAGE 6 -->
+  <section class="page" id="page6">
+    <h1> LORY HO TUM WO B TERY WALY!</h1>
+    <p> CHAL AB PHASS NA LUN P CHAR </p>
+    <p class="small"></p>
+    <button onclick="nextPage(1)">
+      DOBARA SHURU 🔄
+    </button>
+  </section>
+
+  <script>
+    function nextPage(number) {
+      // Saare pages hide karo
+      document.querySelectorAll(".page").forEach(function(page) {
+        page.classList.remove("active");
+      });
+
+      // Selected page show karo
+      document.getElementById("page" + number)
+        .classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
